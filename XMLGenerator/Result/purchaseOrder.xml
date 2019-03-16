@@ -1,0 +1,10 @@
+<purchaseOrder>
+  <information>
+    <productName>Sweet beer</productName>
+    <quantity>3</quantity>
+    <sensibleInfo>
+      <price>1234.65</price>
+    </sensibleInfo>
+    <orderDate>16-Mar-19 23:09:30</orderDate>
+  </information>
+</purchaseOrder>
