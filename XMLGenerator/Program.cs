@@ -42,19 +42,22 @@ namespace XMLGenerator
 
         private static StringBuilder FormatXmlString(string generatedRazorOutput)
         {
-            //Remove newline characters
-            string result = generatedRazorOutput.Replace(Environment.NewLine, string.Empty);
-
+            //Remove newline characters?
+            //string result = generatedRazorOutput.Replace(Environment.NewLine, string.Empty);
+            string result = generatedRazorOutput;
+            
             //Create xDocument
             XDocument xDocument = XDocument.Parse(result);
 
-            //Trim values
+            //Trim white spaces from values
             xDocument.Root.TrimWhiteSpaceFromValues();
 
             StringBuilder sb = new StringBuilder();
-            XmlWriterSettings xws = new XmlWriterSettings();
-            xws.OmitXmlDeclaration = true;
-            xws.Indent = true;
+            XmlWriterSettings xws = new XmlWriterSettings
+            {
+                OmitXmlDeclaration = true,
+                Indent = true
+            };
 
             //More possibilites for creating the XmlWriter
             //Serialize the document to a string builder
